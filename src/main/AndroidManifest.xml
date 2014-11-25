@@ -20,7 +20,7 @@
         <activity
             android:name="com.dct.testLocation.StatusActivity"
             android:label="@string/title_app"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,8 +30,12 @@
         <activity
             android:name="com.dct.testLocation.AddLocationActivity"
             android:label="@string/title_app"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask" >
         </activity>
+        <service
+            android:name="com.dct.testLocation.GeofenceService"
+            android:exported="false" >
+        </service>
 
         <meta-data
             android:name="com.google.android.gms.version"
@@ -39,7 +43,6 @@
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAlrVFjvUWscaibdr5FyEIPnHClvc27_Aw" />
-
     </application>
 
 </manifest>

@@ -34,6 +34,34 @@ public class Location {
         this.radius = radius;
     }
 
+    public Location(Geofence geofence, int transitionType, SQLiteDatabase database) {
+        // Get the name of the geofence in question
+        this.name = geofence.getRequestId();
+
+        // Determine the current state from the geofence notification
+        if(transitionType == Geofence.GEOFENCE_TRANSITION_ENTER) {
+            this.status = "Inside";
+        }
+        else if(transitionType == Geofence.GEOFENCE_TRANSITION_EXIT) {
+            this.status = "Outside";
+        }
+        else {
+            this.status = "Unknown";
+        }
+
+        // Query the database for the rest of the details
+        Cursor row = database.query(LocationDatabaseHelper.LOCATION_TABLE_NAME, new String[]{
+                LocationDatabaseHelper.LATITUDE_FIELD,
+                LocationDatabaseHelper.LONGITUDE_FIELD,
+                LocationDatabaseHelper.RADIUS_FIELD }, null, null, null, null, null, null);
+
+        // Fill the rest of the fields from the database
+        row.moveToFirst();
+        this.latitude = row.getDouble(0);
+        this.longitude = row.getDouble(1);
+        this.radius = row.getDouble(2);
+    }
+
     /**
      * Gets a LatLng object based on the location.
      *
@@ -46,14 +74,16 @@ public class Location {
     /**
      * Gets a geofence object based on the location.
      *
-     * TODO: Implement and test this.
-     *
      * @return
      */
     public Geofence getGeofence() {
         Geofence geofence = new Geofence.Builder()
                 .setRequestId(this.name)
                 .setCircularRegion(this.latitude, this.longitude, (float)this.radius)
+                .setLoiteringDelay(1000*30) // Sets the required loitering time to 30 seconds (30*1000 milliseconds)
+                .setNotificationResponsiveness(1000*30) // Sets the responsiveness to 30 seconds
+                .setExpirationDuration(Geofence.NEVER_EXPIRE)
+                .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT) // Only listen to enter or exit events
                 .build();
 
         return geofence;
