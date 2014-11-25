@@ -1,4 +1,4 @@
-package com.hazen.testLocation.models;
+package com.dct.testLocation.models;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.hazen.testLocation.R;
+import com.dct.testLocation.R;
 
 import java.util.ArrayList;
 

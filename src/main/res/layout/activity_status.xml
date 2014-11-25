@@ -14,7 +14,7 @@
             android:layout_width="fill_parent"
             android:id="@+id/status_tab_menu"
             android:layout_height="wrap_content"
-            android:name="com.hazen.testLocation.TabMenu"
+            android:name="com.dct.testLocation.TabMenu"
             tools:layout="@layout/fragment_tab_menu" />
 
         <TextView

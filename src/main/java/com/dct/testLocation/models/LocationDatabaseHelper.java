@@ -1,4 +1,4 @@
-package com.hazen.testLocation.models;
+package com.dct.testLocation.models;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

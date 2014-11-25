@@ -1,4 +1,4 @@
-package com.hazen.testLocation;
+package com.dct.testLocation;
 
 import android.app.Activity;
 import android.content.Intent;

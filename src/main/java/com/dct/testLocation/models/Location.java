@@ -1,9 +1,10 @@
-package com.hazen.testLocation.models;
+package com.dct.testLocation.models;
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.google.android.gms.location.Geofence;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.io.IOException;
@@ -38,9 +39,24 @@ public class Location {
      *
      * @return
      */
-    public LatLng getLatLng()
-    {
+    public LatLng getLatLng() {
         return new LatLng(this.latitude, this.longitude);
+    }
+
+    /**
+     * Gets a geofence object based on the location.
+     *
+     * TODO: Implement and test this.
+     *
+     * @return
+     */
+    public Geofence getGeofence() {
+        Geofence geofence = new Geofence.Builder()
+                .setRequestId(this.name)
+                .setCircularRegion(this.latitude, this.longitude, (float)this.radius)
+                .build();
+
+        return geofence;
     }
 
     /**

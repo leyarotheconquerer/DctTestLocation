@@ -1,4 +1,4 @@
-package com.hazen.testLocation;
+package com.dct.testLocation;
 
 import android.app.Activity;
 import android.database.sqlite.SQLiteDatabase;
@@ -24,9 +24,9 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.maps.android.SphericalUtil;
-import com.hazen.testLocation.models.Location;
-import com.hazen.testLocation.models.LocationDatabaseHelper;
-import com.hazen.testLocation.models.LocationsAdapter;
+import com.dct.testLocation.models.Location;
+import com.dct.testLocation.models.LocationDatabaseHelper;
+import com.dct.testLocation.models.LocationsAdapter;
 
 import java.util.ArrayList;
 

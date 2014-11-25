@@ -1,20 +1,17 @@
-package com.hazen.testLocation;
+package com.dct.testLocation;
 
 import android.app.Activity;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
-import com.hazen.testLocation.models.Location;
-import com.hazen.testLocation.models.LocationDatabaseHelper;
-import com.hazen.testLocation.models.LocationsAdapter;
+import com.dct.testLocation.models.Location;
+import com.dct.testLocation.models.LocationDatabaseHelper;
+import com.dct.testLocation.models.LocationsAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class StatusActivity extends Activity {
@@ -23,14 +20,6 @@ public class StatusActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_status);
-
-        // Populate the list view with temp values
-        /*ArrayList<Location> temp = new ArrayList<Location>();
-        temp.add(new Location("Saga", "Outside", 0, 0, 0));
-        temp.add(new Location("ASC", "Near", 0, 0, 0));
-        temp.add(new Location("Dorm Room", "Inside", 0, 0, 0));
-
-        LocationsAdapter locationsAdapter = new LocationsAdapter(getApplicationContext(), temp);*/
     }
 
 
