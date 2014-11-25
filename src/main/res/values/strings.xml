@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="title_app">Location Test</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_testing">Testing</string>
+    <string name="tab_status">Status</string>
+    <string name="tab_add_location">Add Location</string>
+    <string name="location_title_googleplay">Supposedly I have GooglePlay</string>
+    <string name="location_label_name">Name</string>
+    <string name="location_button_add_location">Add</string>
+    <string name="location_button_delete_location">Delete</string>
+    <string name="list_unfilled">Unfilled</string>
+
+
+</resources>

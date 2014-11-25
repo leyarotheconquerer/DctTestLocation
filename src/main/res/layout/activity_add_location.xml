@@ -1,0 +1,88 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.hazen.testLocation.AddLocationActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <fragment
+            android:id="@+id/location_tab_menu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:name="com.hazen.testLocation.TabMenu"
+            tools:layout="@layout/fragment_tab_menu" />
+
+        <TextView
+            android:text="@string/hello_world"
+            android:id="@+id/location_title"
+            android:gravity="center"
+            android:layout_margin="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <fragment
+                android:id="@+id/location_map"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:name="com.google.android.gms.maps.MapFragment"
+                tools:layout="@layout/empty_layout" />
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <Spinner
+                android:id="@+id/location_spinner"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/list_location" />
+
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom">
+
+            <!--<TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location_label_name"/>-->
+            <EditText
+                android:id="@+id/location_text_name"
+                android:layout_weight=".5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/location_label_name"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location_button_add_location"
+                android:onClick="onAddLocation"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location_button_delete_location"
+                android:onClick="onDeleteLocation"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+</RelativeLayout>
