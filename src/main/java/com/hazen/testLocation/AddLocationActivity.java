@@ -246,11 +246,11 @@ public class AddLocationActivity extends Activity implements AdapterView.OnItemS
                 .radius(currentLocation.radius));
 
         // Calculate the corner LatLng objects
-        LatLng northeast = SphericalUtil.computeOffset(currentLocation.getLatLng(), currentLocation.radius, 45.0f);
-        LatLng southwest = SphericalUtil.computeOffset(currentLocation.getLatLng(), currentLocation.radius, 225.0f);
-
+        LatLng northeast = SphericalUtil.computeOffset(currentLocation.getLatLng(), currentLocation.radius * 1.5, 45.0f);
+        LatLng southwest = SphericalUtil.computeOffset(currentLocation.getLatLng(), currentLocation.radius * 1.5, 225.0f);
         LatLngBounds bounds = new LatLngBounds(southwest, northeast);
 
+        // Move the view to the new location
         this.locationMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, 0));
     }
 
